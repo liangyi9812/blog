@@ -17,7 +17,8 @@ export default function LazyImage({
   height,
   title,
   onLoad,
-  style
+  style,
+  noAdjust
 }) {
   const maxWidth = siteConfig('IMAGE_COMPRESS_WIDTH')
   const imageRef = useRef(null)
@@ -39,7 +40,7 @@ export default function LazyImage({
   }
 
   useEffect(() => {
-    const adjustedImageSrc = adjustImgSize(src, maxWidth)
+    const adjustedImageSrc = noAdjust ? src : adjustImgSize(src, maxWidth)
     setAdjustedSrc(adjustedImageSrc)
 
     const observer = new IntersectionObserver(

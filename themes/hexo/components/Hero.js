@@ -62,7 +62,7 @@ const Hero = props => {
     <header
       id='header'
       style={{ zIndex: 1 }}
-      className='w-full h-screen relative bg-black'>
+      className='w-full relative bg-black'>
       <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
@@ -81,20 +81,21 @@ const Hero = props => {
         {/* 滚动按钮 */}
         <div
           onClick={scrollToWrapper}
-          className='z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white'>
-          <div className='opacity-70 animate-bounce text-xs'>
+          className='z-10 cursor-pointer w-full text-center text-3xl absolute bottom-0 text-white'>
+          <div className='relative opacity-70 animate-scroll-down-effect text-xs'>
             {siteConfig('HEXO_SHOW_START_READING', null, CONFIG) &&
               locale.COMMON.START_READING}
           </div>
-          <i className='opacity-70 animate-bounce fas fa-angle-down' />
+          <i className='relative opacity-70 animate-scroll-down-effect fas fa-angle-down' />
         </div>
       </div>
 
       <LazyImage
+        noAdjust
         id='header-cover'
         alt={siteInfo?.title}
         src={siteInfo?.pageCover}
-        className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`}
+        className={'w-full h-[369px] object-cover object-center'}
       />
     </header>
   )

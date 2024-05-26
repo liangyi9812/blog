@@ -75,7 +75,17 @@ module.exports = {
         'testimonial-btn': '0px 8px 15px 0px rgba(72, 72, 138, 0.08)',
         1: '0px 1px 3px 0px rgba(166, 175, 195, 0.40)',
         2: '0px 5px 12px 0px rgba(0, 0, 0, 0.10)'
-      }
+      },
+      keyframes: {
+        'scroll-down-effect': {
+          '0%': { top: '0', opacity: '0.4', filter: 'alpha(opacity=40)' },
+          '50%': { top: '-16px', opacity: '1', filter: 'none' },
+          '100%': { top: '0', opacity: '0.4', filter: 'alpha(opacity=40)' },
+        },
+      },
+      animation: {
+        'scroll-down-effect': 'scroll-down-effect 1.5s infinite',
+      },
     }
   },
   variants: {

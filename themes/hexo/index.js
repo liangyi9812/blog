@@ -108,7 +108,7 @@ const LayoutBase = props => {
         {/* 主区块 */}
         <main
           id='wrapper'
-          className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
+          className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full lg:py-10 lg:px-4 md:px-8 min-h-screen relative`}>
           <div
             id='container-inner'
             className={
@@ -139,7 +139,7 @@ const LayoutBase = props => {
             {/* 右侧栏 */}
             <SideRight
               {...props}
-              className={`space-y-4 lg:w-80 pt-4 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}
+              className={`space-y-4 lg:w-80`}
             />
           </div>
         </main>
@@ -178,14 +178,14 @@ const LayoutIndex = props => {
  */
 const LayoutPostList = props => {
   return (
-    <div className='pt-8'>
+    <>
       <SlotBar {...props} />
       {siteConfig('POST_LIST_STYLE') === 'page' ? (
         <BlogPostListPage {...props} />
       ) : (
         <BlogPostListScroll {...props} />
       )}
-    </div>
+    </>
   )
 }
 
