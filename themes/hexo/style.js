@@ -30,12 +30,12 @@ const Style = () => {
     }
 
     /* 设置了从上到下的渐变黑色 */
-    #theme-hexo .header-cover::before {
+    #theme-hexo #header::before {
         content: "";
         position: absolute;
         width: 100%;
         height: 100%;
-        background:  linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0.5) 100%);
+        background-color: rgba(0, 0, 0, 0.3);
     }
 
     /* Custem */

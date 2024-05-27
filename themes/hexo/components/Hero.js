@@ -61,8 +61,8 @@ const Hero = props => {
   return (
     <header
       id='header'
-      style={{ zIndex: 1 }}
-      className='w-full relative bg-black'>
+      style={{ zIndex: 1, backgroundImage: `url('${siteInfo?.pageCover}')` }}
+      className='relative w-full h-[400px] bg-cover bg-center bg-no-repeat transition duration-500 ease-in-out'>
       <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
@@ -90,13 +90,13 @@ const Hero = props => {
         </div>
       </div>
 
-      <LazyImage
+      {/* <LazyImage
         noAdjust
         id='header-cover'
         alt={siteInfo?.title}
         src={siteInfo?.pageCover}
         className={'w-full h-[369px] object-cover object-center'}
-      />
+      /> */}
     </header>
   )
 }
